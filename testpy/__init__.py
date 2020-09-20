@@ -1,4 +1,4 @@
 
 
-from .testpy import runtest, runtest_item, TAGS as OP
+from .testpy import runtest, runtest_item, OP
 

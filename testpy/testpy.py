@@ -60,8 +60,6 @@ TAGTESTS = dict(BOOL=(lambda a, b: bool(a) == b),
                 ELSE=(lambda a, b=Exception: not isinstance(a, b)))
 
 
-TAGS = TAGTESTS.keys()
-
 def runtest_item(function, tag, args, kwargs, expects,
                  verbosity=1, results=None, shortenargs=18):
     funcname = function.__code__.co_name
@@ -145,4 +143,8 @@ def runtest(function, testvalues, verbosity=1, shortenargs=18, results=None):
         print("{:s}: {:d} tests\n{:7d} passed\n{:7d} failed\n{:7d} errors"
               .format(testname, counts, successes, failures, errors))
     return (testname, counts, successes, failures, errors)
+
+
+OP = type('OPS', (), TAGTESTS)
+
 
